@@ -1,16 +1,26 @@
 Rails.application.routes.draw do
   root 'static_pages#top'
   get '/signup', to: 'users#new'
-  
+
   # ログイン機能
-  get '/login', to: 'sessions#new'
-  post '/login', to: 'sessions#create'
+  get    '/login', to: 'sessions#new'
+  post   '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> add-user-attendances
   resources :users do
     member do
       get 'edit_basic_info'
       patch 'update_basic_info'
     end
+<<<<<<< HEAD
   end
 end
+=======
+    resources :attendances, only: :update # この行を追加します。
+  end
+end
+>>>>>>> add-user-attendances
