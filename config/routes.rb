@@ -6,21 +6,14 @@ Rails.application.routes.draw do
   get    '/login', to: 'sessions#new'
   post   '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
-<<<<<<< HEAD
-  
-=======
 
->>>>>>> add-user-attendances
   resources :users do
     member do
       get 'edit_basic_info'
       patch 'update_basic_info'
+      get 'attendances/edit_one_month'
+      patch 'attendances/update_one_month'
     end
-<<<<<<< HEAD
-  end
-end
-=======
     resources :attendances, only: :update # この行を追加します。
   end
 end
->>>>>>> add-user-attendances
